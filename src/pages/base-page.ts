@@ -3,7 +3,7 @@
 import { Page, Locator } from '@playwright/test';
 
 export class BasePage {
-	constructor(protected page: Page) {}
+	constructor(public page: Page) {}
 
 	async click(locator: string) {
 		await this.page.locator(locator).click();

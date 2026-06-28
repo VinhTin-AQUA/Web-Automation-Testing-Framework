@@ -4,3 +4,9 @@
 
 - UI: https://automationexercise.com/
 - API: https://fakestoreapi.com/docs
+
+## Commands
+
+```bash
+npx playwright test tests/login.spec.ts
+```

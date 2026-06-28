@@ -24,8 +24,4 @@ export const env = {
 	baseUrl: requireEnv('UI_URL'),
 
 	apiUrl: requireEnv('API_URL'),
-
-	adminUsername: requireEnv('ADMIN_USERNAME'),
-
-	adminPassword: requireEnv('ADMIN_PASSWORD'),
 };
