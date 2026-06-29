@@ -41,7 +41,7 @@ export const RegisterInvalidEmailTestData: RegisterEmailModel[] = [
 	},
 	{
 		id: 7,
-		email: 'test@gmail',
+		email: 'testtest@gmail',
 		name: 'Your Name',
 	},
 	{

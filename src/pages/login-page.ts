@@ -38,9 +38,9 @@ export class LoginPage extends BasePage {
 		await this.page.getByRole('button', { name: 'Login' }).click();
 	}
 
-	async register(name: string, email: string) {
-		await this.nameSignupInput.fill(name);
+	async register(email: string, name: string) {
 		await this.emailSignupInput.fill(email);
+		await this.nameSignupInput.fill(name);
 
 		await this.signupButton.click();
 		// await Promise.all([this.page.waitForURL('**/signup'), this.signupButton.click()]);
