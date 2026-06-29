@@ -8,7 +8,7 @@
 ## Commands
 
 ```bash
-npx playwright test tests/ui/auth/REGISTER.spec.ts
+npx playwright test tests/ui/auth/register-submit-with-info.spec.ts
 
 npx playwright show-report
 ```

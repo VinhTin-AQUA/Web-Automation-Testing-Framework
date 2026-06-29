@@ -37,8 +37,7 @@ export class RegisterPage extends BasePage {
 	readonly cityInput: Locator;
 	readonly zipcodeInput: Locator;
 	readonly mobileNumberInput: Locator;
-
-	readonly createAccountButton: Locator;
+	readonly signupButtonInfo: Locator;
 
 	constructor(page: Page) {
 		super(page);
@@ -54,9 +53,9 @@ export class RegisterPage extends BasePage {
 		this.mrRadio = page.getByLabel('Mr.');
 		this.mrsRadio = page.getByLabel('Mrs.');
 
-		this.nameInput = page.getByLabel('Name');
-		this.emailInput = page.getByLabel('Email');
-		this.passwordInput = page.getByLabel('Password');
+		this.nameInput = page.locator('#name');
+		this.emailInput = page.getByLabel('Email *');
+		this.passwordInput = page.getByLabel('Password *');
 
 		this.daySelect = page.locator('#days');
 		this.monthSelect = page.locator('#months');
@@ -66,21 +65,21 @@ export class RegisterPage extends BasePage {
 
 		this.specialOffersCheckbox = page.getByLabel('Receive special offers from our partners!');
 
-		this.firstNameInput = page.getByLabel('First name');
-		this.lastNameInput = page.getByLabel('Last name');
-		this.companyInput = page.getByLabel('Company');
+		this.firstNameInput = page.getByLabel('First name *');
+		this.lastNameInput = page.getByLabel('Last name *');
+		this.companyInput = page.locator('#company');
 
-		this.addressInput = page.locator('[data-qa="address"]');
-		this.address2Input = page.locator('[data-qa="address2"]');
+		this.addressInput = page.getByLabel('Address * (Street address, P.O. Box, Company name, etc.)');
+		this.address2Input = page.getByLabel('Address 2');
 
-		this.countrySelect = page.getByLabel('Country');
+		this.countrySelect = page.getByLabel('Country *');
 
-		this.stateInput = page.getByLabel('State');
-		this.cityInput = page.getByLabel('City');
-		this.zipcodeInput = page.getByLabel('Zipcode');
-		this.mobileNumberInput = page.getByLabel('Mobile Number');
+		this.stateInput = page.getByLabel('State *');
+		this.cityInput = page.locator('#city');
+		this.zipcodeInput = page.locator('#zipcode');
+		this.mobileNumberInput = page.locator('#mobile_number');
 
-		this.createAccountButton = page.getByRole('button', { name: 'Create Account' });
+		this.signupButtonInfo = page.getByRole('button', { name: 'Create Account' });
 	}
 
 	async goto() {
@@ -95,15 +94,7 @@ export class RegisterPage extends BasePage {
 		// await Promise.all([this.page.waitForURL('**/signup'), this.signupButton.click()]);
 	}
 
-	async registerWithInfo(email: string, name: string) {
-		await this.emailSignupInput.fill(email);
-		await this.nameSignupInput.fill(name);
-
-		await this.signupButton.click();
-		// await Promise.all([this.page.waitForURL('**/signup'), this.signupButton.click()]);
-	}
-
-	async fillRegisterForm(data: RegisterWithInfoModel): Promise<void> {
+	async createAccountWithInfo(data: RegisterWithInfoModel): Promise<void> {
 		// Title
 		if (data.title === 'Mr') {
 			await this.mrRadio.check();
@@ -154,5 +145,7 @@ export class RegisterPage extends BasePage {
 		await this.cityInput.fill(data.city);
 		await this.zipcodeInput.fill(data.zipcode);
 		await this.mobileNumberInput.fill(data.mobileNumber);
+
+        await this.signupButtonInfo.click();
 	}
 }
