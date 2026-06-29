@@ -9,7 +9,7 @@ import {
 
 test.describe('Register with Valid Info', () => {
 	for (const data of RegisterValidTestData) {
-		test(`REGISTER-001 - ${data.id}`, async ({ loginPage }) => {
+		test(`REGISTER-001 - ${data.id}`, async ({ registerPage: loginPage }) => {
 			await loginPage.goto();
 
 			await loginPage.register(data.email, data.name);
@@ -22,7 +22,7 @@ test.describe('Register with Valid Info', () => {
 
 test.describe('Register with Invalid email', () => {
 	for (const data of RegisterInvalidEmailTestData) {
-		test(`REGISTER-002 - ${data.id}`, async ({ loginPage }) => {
+		test(`REGISTER-002 - ${data.id}`, async ({ registerPage: loginPage }) => {
 			await loginPage.goto();
 			await loginPage.register(data.email, data.name);
 
@@ -41,7 +41,7 @@ test.describe('Register with Invalid email', () => {
 
 test.describe('Register with Invalid name', () => {
 	for (const data of RegisterInvalidNameTestData) {
-		test(`REGISTER-003 - ${data.id}`, async ({ loginPage }) => {
+		test(`REGISTER-003 - ${data.id}`, async ({ registerPage: loginPage }) => {
 			await loginPage.goto();
 
 			await loginPage.register(data.email, data.name);
@@ -63,7 +63,7 @@ test.describe('Register with Invalid name', () => {
 
 test.describe('Register - Required field validation', () => {
 	for (const data of RegisterRequiredEmailTestData) {
-		test(`REGISTER-004 - ${data.id}`, async ({ loginPage }) => {
+		test(`REGISTER-004 - ${data.id}`, async ({ registerPage: loginPage }) => {
 			await loginPage.goto();
 			await loginPage.register(data.email, data.name);
 
@@ -96,7 +96,7 @@ test.describe('Register - Required field validation', () => {
 
 test.describe('Register with Existing email', () => {
 	for (const data of RegisterExistEmailTestData) {
-		test(`REGISTER-005 - ${data.id} - ${data.name}`, async ({ loginPage }) => {
+		test(`REGISTER-005 - ${data.id} - ${data.name}`, async ({ registerPage: loginPage }) => {
 			await loginPage.goto();
 
 			await loginPage.register(data.email, data.name);

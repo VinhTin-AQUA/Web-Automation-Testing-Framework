@@ -1,6 +1,6 @@
-import { RegisterEmailModel } from '../models/register-email.model';
+import { RegisterEmailNameModel } from '../models/register.model';
 
-export const RegisterValidTestData: RegisterEmailModel[] = [
+export const RegisterValidTestData: RegisterEmailNameModel[] = [
 	{
 		id: 1,
 		email: 'khoatrandang291@gmail.com',
@@ -8,7 +8,7 @@ export const RegisterValidTestData: RegisterEmailModel[] = [
 	},
 ];
 
-export const RegisterInvalidEmailTestData: RegisterEmailModel[] = [
+export const RegisterInvalidEmailTestData: RegisterEmailNameModel[] = [
 	{
 		id: 1,
 		email: '@gmail.com',
@@ -86,7 +86,7 @@ export const RegisterInvalidEmailTestData: RegisterEmailModel[] = [
 	},
 ];
 
-export const RegisterInvalidNameTestData: RegisterEmailModel[] = [
+export const RegisterInvalidNameTestData: RegisterEmailNameModel[] = [
 	{
 		id: 1,
 		email: 'test@gmail.com',
@@ -119,7 +119,7 @@ export const RegisterInvalidNameTestData: RegisterEmailModel[] = [
 	},
 ];
 
-export const RegisterRequiredEmailTestData: RegisterEmailModel[] = [
+export const RegisterRequiredEmailTestData: RegisterEmailNameModel[] = [
 	{
 		id: 1,
 		email: '',
@@ -142,7 +142,7 @@ export const RegisterRequiredEmailTestData: RegisterEmailModel[] = [
 	},
 ];
 
-export const RegisterExistEmailTestData: RegisterEmailModel[] = [
+export const RegisterExistEmailTestData: RegisterEmailNameModel[] = [
 	{
 		id: 1,
 		email: 'abc@gmail.com',
