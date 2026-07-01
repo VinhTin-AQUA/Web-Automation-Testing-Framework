@@ -8,7 +8,7 @@ import {
 	registerWithoutCompanyData,
 	registerWithoutDateOfBirthData,
     registerWithValidInfoData,
-} from '../../../src/test-data/register-with-info-data';
+} from '../../../src/test-data/register-with-info.test-data';
 
 test.describe('Delete Accounts', () => {
 	const list = [
