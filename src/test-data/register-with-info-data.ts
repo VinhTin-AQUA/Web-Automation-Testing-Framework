@@ -131,7 +131,7 @@ export const registerRequiredFieldValidationData: RegisterWithInfoModel[] = [
 		id: 1,
 		title: 'Mr',
 		name: 'John Doe',
-		email: 'john1@test.com',
+		email: 'john1adwf@test.com',
 		password: '',
 		day: 1,
 		month: 1,

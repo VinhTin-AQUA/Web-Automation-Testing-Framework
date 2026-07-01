@@ -13,13 +13,13 @@ import {
 test.describe('Register with Valid Info', () => {
 	const list = [
         ...registerWithValidInfoData,
-		// ...registerRequiredFieldValidationData,
-		// ...registerInvalidPasswordData,
-		// ...registerWithoutDateOfBirthData,
-		// ...registerInvalidFirstNameData,
-		// ...registerInvalidLastNameData,
-		// ...registerWithoutCompanyData,
-		// ...registerInvalidMobileNumberData,
+		...registerRequiredFieldValidationData,
+		...registerInvalidPasswordData,
+		...registerWithoutDateOfBirthData,
+		...registerInvalidFirstNameData,
+		...registerInvalidLastNameData,
+		...registerWithoutCompanyData,
+		...registerInvalidMobileNumberData,
 	];
 
 	for (let i = 0; i < list.length; i++) {
