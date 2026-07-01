@@ -10,7 +10,7 @@ import {
     registerWithValidInfoData,
 } from '../../../src/test-data/register-with-info-data';
 
-test.describe('Register with Valid Info', () => {
+test.describe('Delete Accounts', () => {
 	const list = [
         ...registerWithValidInfoData,
 		...registerRequiredFieldValidationData,
@@ -27,7 +27,7 @@ test.describe('Register with Valid Info', () => {
 	}
 
 	for (const data of list) {
-		test(`REGISTER-001 - ${data.id} `, async ({ loginPage }) => {
+		test(`Delete Account - ${data.id} `, async ({ loginPage }) => {
 			await loginPage.goto();
 
 			await loginPage.login(data.email, data.password);

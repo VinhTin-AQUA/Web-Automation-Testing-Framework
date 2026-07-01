@@ -9,7 +9,7 @@ export const registerWithValidInfoData: RegisterWithInfoModel[] = [
 		id: 1,
 		title: 'Mr',
 		name: 'John Doe',
-		email: 'john.dot1@test.com',
+		email: 'john.dot1q2eq2@test.com',
 		password: 'Password123!',
 		day: 1,
 		month: 1,
